@@ -1,0 +1,30 @@
+{% extends 'administracion/basecli.html' %}
+{% load static %}
+
+{% block titulo %}
+Modificación Cliente
+{% endblock %}
+
+{% block contenido %}
+<!--==============================Content=================================-->
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
+<div class="container_12">
+    <div class="clear"></div>
+    <div class="grid_12">
+        <div align="center">
+            {% if form %}
+            <div class="text1 col1"><a>Complete los campos a actualizar del paquete</a>
+                <br /><br />
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <table>
+                    {{form.as_table}}
+                </table>
+                <input type="submit" , value="Enviar">
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

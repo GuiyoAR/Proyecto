@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Inicio
+{% endblock %}
+
+{% block contenido %}
+<!--==============================Content=================================-->
+<div class="grid_12">
+	<img src="{% static 'images/Main_banner4.jpg' %}" alt="">
+</div>
+<div class="content">
+	<div class="ic"></div>
+	<div class="container_12">
+		<div class="clear"></div>
+		<div class="grid_12">
+			<div class="center">
+				{% if request.user.is_authenticated %}
+				<h3>¡¡Bienvenido {{message}}!!</h3>
+				{% else %}
+				<h3>¡Bienvenidos!</h3>
+				{% endif %}
+			</div>
+			<div class="extra_wrapper">
+				<img src="{% static 'images/page1_img1.jpg' %}" alt="" class="img_inner fleft">
+				<style>
+					div {
+						text-align: justify;
+						text-justify: inter-word;
+					}
+				</style>
+				Somos una empresa jóven y de permanente desarrollo, buscamos propuestas de viajes
+				para todas las edades. Con una gama de destinos para hacer la experiencia de
+				turismo algo único.
+				<br />
+				La Gestión permanente nos ha permitido ir expandiendo nuestros servicios hacia una
+				amplia zona geográfica. Atendemos una amplia y selecta clientela que nos permite
+				brindarles una gama de servicios turísticos y cubrir las diversas expectativas
+				de cada uno.
+				<br />
+				Sabemos del mercado, tenemos el conocimiento y los medios científicos y tecnológicos, disponemos de un
+				prestigio que nos acredita como<div class="col1"> una empresa Seria, Sólida y
+					Capaz de afrontar desafíos con éxito.</div>
+				</form>
+			</div>
+			<br />
+			<div class="grid_5">
+				<h4>Comentarios de Clientes</h4>
+				<blockquote class="bq1">
+					<img src="{% static 'images/page1_img2.jpg' %}" alt="" class="img_inner noresize fleft">
+					<div class="extra_wrapper">
+						<p>Calidad y calidez de atención. Buenas propuestas y mucho cuidado con el clientes. La oferta
+							fue muy buena y el viaje excelente. Una experiencia inolvidable. </p>
+						<div class="alright">
+							<div class="col1">Miranda Brown</div>
+						</div>
+					</div>
+				</blockquote>
+			</div>
+			<div class="grid_5 prefix_1">
+				<img src="{% static 'images/page1_img3.jpg' %}" alt="" class="img_inner fleft">
+			</div>
+			<div class="grid_12">
+				<h3 class="head1">Últimas Novedades</h3>
+				<div class="grid_3">
+					<div class="block1">
+						<time datetime="2022-03-21">21<span>Mar</span></time>
+						<div class="extra_wrapper">
+							<div class="text1 col1"><a href="#">Arrancamos!</a></div>
+							Arrancamos el curso con muchas expectativas. El profesor parece muy bueno.
+						</div>
+					</div>
+				</div>
+				<div class="grid_3">
+					<div class="block1">
+						<time datetime="2014-01-01">16<span>May</span></time>
+						<div class="extra_wrapper">
+							<div class="text1 col1"><a href="#">A marearse con Github</a></div>
+							Y acá estamos con Pythons aunque GitHub nos rompió. Pero está excelente el curso.
+						</div>
+					</div>
+				</div>
+				<div class="grid_3">
+					<div class="block1">
+						<time datetime="2014-01-01">05<span>Jul</span></time>
+						<div class="extra_wrapper">
+							<div class="text1 col1"><a href="#">Programar o no programar?</a></div>
+							Presentando el proyecto final. Estaremos a la altura del desafío? Podremos conformar al
+							profe?
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

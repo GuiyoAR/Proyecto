@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+Alta Paquete
+{% endblock %}
+
+{% block contenido %}
+<!--==============================Content=================================-->
+<br> </br>
+<center>
+    <div class="text1 col1"><a href="#">Listado de Paquetes activos</a>
+</center>
+    <div class="d-flex" style="margin-top:1rem; margin-left:2rem"> 
+    {% for paquetin in object_list %}
+    <div class="card" style="width: 20rem;background-color: rgb(251, 251, 253);margin-top:1rem;">
+        <div class="card-body">
+            <p class="card-title">Destino: {{paquetin.destino}}</p>
+            <p class="card-text">Descripción: {{paquetin.descripcion}}</p>
+            <p class="card-text">Días: {{paquetin.dias}}</p>
+            <p class="card-text">Fecha Partida: {{paquetin.fecha_partida}}</p>
+            <p class="card-text">Fecha Regreso: {{paquetin.fecha_regreso}}</p>
+            <p class="card-text">Foto 1: {{paquetin.Image_Set_1}}</p>
+            <p class="card-text">Foto 2: {{paquetin.Image_Set_2}}</p>
+            <p class="card-text">Precio: {{paquetin.precio_publico}}</p>
+            <p class="card-text">Costo: {{paquetin.costo}}</p>
+            <p class="card-text">Oferta: {{paquetin.oferta}}</p>
+            <p class="card-text">Activo: {{paquetin.activo}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

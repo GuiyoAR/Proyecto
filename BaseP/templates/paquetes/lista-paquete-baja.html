@@ -1,0 +1,34 @@
+{% extends 'administracion/basecli.html' %}
+{% load static %}
+
+{% block titulo %}
+Baja Cliente
+{% endblock %}
+
+{% block contenido %}
+<!--==============================Content=================================-->
+<br /> <br /> <br /> <br /> <br /> <br /> <br />
+<div class="ic"></div>
+<div class="container_12">
+    <div class="center">
+        <div class="clear"></div>
+        <br /> <br />
+        <div class="text1 col1"><a>Seleccione el paquete para dar de baja</a> </div>
+        <div class="banners">
+            {% for product in pkq %}
+            <div class="grid_3">
+                <div class="card">
+                    <div class="card-header">{{product.destino}}</div>
+                    <div class="card-body">
+                        <p class="card-text">Salida: {{product.fecha_partida}}</p>
+                        <p class="card-text">Regreso: {{product.fecha_regreo}}</p>
+                        <p class="card-text">Precio: {{product.precio_publico}}</p>
+                        <a href="/paquetes/baja-paquete/{{product.id}}/" class="btn btn-primary">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

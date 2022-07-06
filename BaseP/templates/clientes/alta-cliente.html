@@ -1,0 +1,55 @@
+{% extends 'administracion/basecli.html' %}
+{% load static %}
+
+{% block titulo %}
+Alta Cliente
+{% endblock %}
+
+{% block contenido %}
+<!--==============================Content=================================-->
+<br /> <br /> <br /><br /><br /><br /><br /><br /><br /><br />
+<div class="container_12">
+    <div class="clear"></div>
+    <div class="grid_12">
+        <div align="center">
+            {% if form %}
+            <div class="text1 col1"><a>Complete los campos del nuevo cliente</a>
+                <br/> <br/>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <table>
+                        {{form.as_table}}
+                    </table>
+                    <input type="submit" , value="Enviar">
+                </form>
+                {% elif new_cliente %}
+                <br/> 
+                <div class="text1 col1"><a>¡¡Nuevo cliente creado!!</a></div>
+                <div class="card" style="width: 20rem;background-color: rgb(250, 250, 250);margin-top:2rem">
+                    <div align="left">
+                        <div class="card-body">
+                            <div class="col2">
+                                <p class="card-title">Nombre: {{new_cliente.nombre}}</p>
+                                <p class="card-text">Apellido: {{new_cliente.apellido}}</p>
+                                <p class="card-text">Pasaporte: {{new_cliente.pasaporte}}</p>
+                                <p class="card-text">Vencimiento: {{new_cliente.vencimiento}}</p>
+                                <p class="card-text">DNI: {{new_cliente.dni}}</p>
+                                <p class="card-text">Domicilio: {{new_cliente.domicilio}}</p>
+                                <p class="card-text">Teléfono: {{new_cliente.telefono}}</p>
+                                <p class="card-text">Activo: {{new_cliente.activo}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <br> <br>
+                <div class="text1 col1"><a href="#">Ocurrio un error en la carga del cliente</a>
+                    <br> <br>
+                    {{errors}}
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

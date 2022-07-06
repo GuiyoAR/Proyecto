@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Busqueda de Paquete
+{% endblock %}
+
+{% block contenido %}
+<!--==============================Content=================================-->
+<center>
+    <br> </br>
+    <div class="text1 col1"><a href="#">Resultado de la busqueda</a>
+    <br> </br>
+</center>
+{% if pkt %}
+    <div class="d-flex" style="margin-left:2rem">
+        {% for paquetito in pkt %}
+            <div class="d-flex" style="margin-left:2rem">
+                <div class="card" style="width: 20rem;background-color: rgb(251, 251, 253);margin-top:1rem;">
+                    <div class="card-body">
+                        <p class="card-title">Destino: {{paquetito.destino}}</p>
+                        <p class="card-text">Descripcion: {{paquetito.descripcion}}</p>
+                        <p class="card-text">Días: {{paquetito.dias}}</p>
+                        <p class="card-text">Fecha Partida: {{paquetito.fecha_partida}}</p>
+                        <p class="card-text">Fecha Regreso: {{paquetito.fecha_regreso}}</p>
+                        <p class="card-text">Precio Público: {{paquetito.precio_publico}}</p>
+                        <p class="card-text">Costo: {{paquetito.costo}}</p>
+                        <p class="card-text">Oferta: {{paquetito.oferta}}</p>
+                        <p class="card-text">Imagen 1: {{paquetito.Image_Set_1}}</p>
+                        <p class="card-text">Imagen 2: {{paquetito.Image_Set_2}}</p>
+                        <p class="card-text">Oferta: {{paquetito.oferta}}</p>
+                        <p class="card-text">Activo: {{paquetito.activo}}</p>
+                    </div>
+                </div>
+            </div>
+        
+        {% endfor %}
+    </div>
+{% endif %}
+<div style = "color:red; margin-left:25rem">{{errors}}</div>
+{% endblock %}

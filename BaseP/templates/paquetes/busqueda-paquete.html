@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+Resultado de Busqueda
+{% endblock %}
+
+{% block contenido %}
+<!--==============================Content=================================-->
+<img src="{% static 'images/Main_banner5.jpg' %}" alt="">
+<div class="content">
+    <div class="center">
+        <br /> <br /> <br />
+        <div class="text2 col1"><a>{{errors}} </a> </div>
+    </div>
+    <div class="ic"></div>
+    <div class="container_12">
+        <div class="center">
+            <br /> <br />
+            {% if pkt %}
+            {% for pkq in pkt %}
+                <div class="clear"></div>
+                <div class="text2 col1"><a>¡PAQUETE {{pkq.destino}}! </a> </div>
+                <br /> <br />
+                <div class="extra_wrapper">
+                    <img src="{{pkq.Image_Set_1.url}}" alt="" class="img_inner fleft">
+                    <div class="text1 col1"><a>{{pkq.descripcion}}</a> </div>
+                    <h4>Días Totales: {{pkq.dias}}</h4>
+                    <h4>Fecha de Salida: {{pkq.fecha_partida}}</h4>
+                    <h4>Fecha de Regreso: {{pkq.fecha_regreso}} </h4>
+                    </form>
+                </div>
+                <br /> <br />
+                {% if pkq.oferta %}
+                    <div class="text2 col1"><a>APROVECHE ESTA SUPER OFERTA DE AR$ {{pkq.precio_publico}} </a> </div>
+                {% else %}
+                    <div class="text2 col1"><a>APROVECHE ESTE PRECIO DE AR$ {{pkq.precio_publico}} </a> </div>
+                {% endif %}
+                <br /> <br />
+                <img src="{{pkq.Image_Set_2.url}}" alt="" class="img_inner fleft">
+                <br /> <br />
+                <img src="{{pkq.Image_Set_3.url}}" alt="" class="img_inner fleft">
+                <br /> <br />
+                <img src="{{pkq.Image_Set_4.url}}" alt="" class="img_inner fleft">
+                <a href="/compra/" class="btn btn-primary">COMPRAR</a> <a href="/contacto/"
+                    class="btn btn-primary">¡Contactenos!</a>
+                <br /><br /><br />
+                <div class="text1 col2"><a>RECUERDE QUE PARA COMPRAR DEBE LOGUEARSE EN EL SISTEMA </a> </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

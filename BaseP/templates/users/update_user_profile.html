@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+Perfil de usuario
+{% endblock %}
+
+{% block contenido %}
+<img src="{% static 'images/Main_banner7.jpg' %}" alt="">
+<div class="content">
+    <div class="ic"></div>
+    <div class="container_12">
+        <div class="grid_12">
+            <div class="center">
+                <div class="clear"></div>
+                <br /><br />
+                <div class="text2 col1"><a>Complete los campos a actualizar </a> </div>
+                <br /><br />
+                <center>
+                    {% if form %}
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <table>
+                            {{form.as_table}}
+                        </table>
+                        <br />
+                        <input type="submit" , value="Enviar">
+                    </form>
+                    {% endif %}
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

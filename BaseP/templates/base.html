@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>
+		{% block titulo %}
+		{% endblock %}
+	</title>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="icon" href="{% static 'images/favicon.ico' %}">
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+	<link rel="stylesheet" href="{% static 'booking/css/booking.css' %}">
+	<link rel="stylesheet" href="{% static 'css/camera.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<link  href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+	</head>
+
+<body class="page1" id="top">
+	<!--==============================header=================================-->
+	<header>
+		<div class="container_12">
+			<div class="grid_12">
+				<div class="menu_block">
+					<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+						<ul class="sf-menu">
+							<li class=""><a href="/">INICIO</a></li>
+							<li><a href="/paquetes/oferta-paquete/">OFERTAS</a></li>
+							<li><a href="/paquetes/lista-paquete/">PAQUETES</a></li>
+							<li><a href="/clientes/cliente/">CLIENTE</a></li>
+							<li><a href="/contacto/">ACERCA DE...</a></li>
+						</ul>
+					</nav>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="center">
+			<a href="/">
+				<img src="{% static 'images/logo_3.png' %}">
+			</a>
+		</div>
+		<br />
+		<h1 style="margin-left:70rem">
+			<div class="col2">
+				{% if request.user.is_authenticated %}
+				<div> Usuario {{user.username}} </div>
+				{% else %}
+				<div> Usuario Anónimo </div>
+				{% endif %}
+			</div>
+		</h1>
+	</header>
+	<!--==============================Content  base=================================-->
+	{% block contenido %}
+
+	{% endblock %}
+	<!--==============================footer=================================-->
+	<footer>
+		<div class="container_12">
+			<div class="grid_12">
+				<div class="socials">
+					<a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+					<a href="https://twitter.com/" class="fa fa-twitter"></a>
+
+				</div>
+				<div class="copy">
+					Your Trip (c) 2014 | <a href="#">Privacy Policy</a> | Website Template Designed</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="/booking/js/jquery.js"></script>
+	<script src="/booking/js/jquery-migrate-1.2.1.js"></script>
+	<script src="/booking/js/script.js"></script>
+	<script src="/booking/js/superfish.js"></script>
+	<script src="/booking/js/jquery.ui.totop.js"></script>
+	<script src="/booking/js/jquery.equalheights.js"></script>
+	<script src="/booking/js/jquery.mobilemenu.js"></script>
+	<script src="/booking/js/jquery.easing.1.3.js"></script>
+	<script src="/booking/js/owl.carousel.js"></script>
+	<script src="/booking/js/camera.js"></script>
+	<script src="/booking/js/jquery.mobile.customized.min.js"></script>
+	<script src="/booking/js/booking.js"></script>
+</body>
+
+</html>
+<!-- <script>
+		$(function () {
+			$('#bookingForm').bookingForm({
+				ownerEmail: '#'
+			});
+		})
+		$(function () {
+			$('#bookingForm input, #bookingForm textarea').placeholder();
+		});
+	</script> -->

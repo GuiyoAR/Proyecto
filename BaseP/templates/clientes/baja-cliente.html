@@ -1,0 +1,24 @@
+{% extends 'administracion/basecli.html' %}
+
+{% block titulo %}
+Borrar producto
+{% endblock %}
+
+{% block contenido %}
+<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> 
+<div class="container_12">
+    <div class="clear"></div>
+    <div class="grid_12">
+        <div align="center">
+            <div class="text1 col1"><a>Se va a eliminar el cliente {{dlt.nombre}} {{dlt.apellido}}. ¿Está seguro?</a>
+                <!-- <h3 style="color: red">Estas por eliminar el producto {{dlt.name}}, estas seguro?</h3> -->
+                <form method="POST">
+                    {% csrf_token %}
+                    <br /> <br /><br /> <br />
+                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
