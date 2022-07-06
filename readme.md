@@ -29,6 +29,8 @@ App PACKAGE
 Se pueden cargar en el PANEL ADMINISTRADOR dos paquetes (RIO DE JANEIRO y ROMA) con cualquier dato. Los archivos de imágenes deben ser respetados por los tamaños  (ej. imagen 1 = rio1.jpg /... / imagen 4 = rio4,jPG). 
 Enlace de los datos para cargar: https://drive.google.com/drive/folders/1xIGtvH0Khdcvv07ALQg2P7X7fBDzr_x1?usp=sharing
 
+IMPORTANTE: Se incluye una copia completa del proyecto en archivo RAR en el link de google drive
+
 PANEL ADMINISTRADOR se puede modificar los datos de CLIENTES y PAQUETES (Alta, Baja, Modificación)
 
 ERROR DETECTADO:
