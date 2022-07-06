@@ -35,6 +35,7 @@ ERROR DETECTADO:
 Se detectó un error en la parte de profile del usuario. El programa registra un nuevo usuario y cuando un usuario está logueado en el panel CLIENTES puede editar el PERFIL pero da un error. El problema es que la funcion no liga al USER de la BD con el USER_PROFILE declarado en la función users. Este mismo error se detectó en el ECOMMERCE que se hizo en clase (branck LAST_CLASS). Se puede creear un usuario pero al tratar de editarlo  (con un click sobre la imagen) aparece el error. 
 Realmente se realizó una investigación y consultas sin encontrar el resultado. 
 Estaría bueno, si es posible, alguna idea de cual es exactamente el problema y la solución del mismo. 
+Error: https://youtu.be/Mgqy8QQx7rk
 
 Muchas gracias!
 GUILLERMO MARCELO FLORES
