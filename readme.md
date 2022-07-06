@@ -1,4 +1,4 @@
-# Coder
+# CoderHouse Trip
 Este trabajo fue desarrollado integramente por mi. 
 
 Es una página web para venta de paquetes turísticos. Esto consta de PAQUETES que son ofrecidos para la venta. Cuenta con una parte de CLIENTES que debe ser accedida para poder realizar la compra. 
